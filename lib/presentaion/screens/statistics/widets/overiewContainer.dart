@@ -1,3 +1,4 @@
+import 'package:fitnessbot/config/app_colors.dart';
 import 'package:fitnessbot/config/customtextstyle.dart';
 import 'package:flutter/material.dart';
 
@@ -28,18 +29,35 @@ class Overiewcontainer extends StatelessWidget {
             shape: BoxShape.rectangle,
             borderRadius: BorderRadius.circular(30)),
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(15),
           child: Column(
-            spacing: 5,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            spacing: 10,
             children: [
-              Icon(icon),
-              Text(
-                value,
-                style: AppTextStyles.body14black,
-              ),
-              Text(
-                label,
-                style: AppTextStyles.body14black,
+              Container(
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.lightBlueAccent.withValues(alpha: 0.2)),
+                  child: Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: Icon(
+                      icon,
+                      color: AppColors.blueColor,
+                    ),
+                  )),
+              Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    value,
+                    style: AppTextStyles.body14black,
+                  ),
+                  Text(
+                    label,
+                    style: AppTextStyles.body14black,
+                  ),
+                ],
               )
             ],
           ),

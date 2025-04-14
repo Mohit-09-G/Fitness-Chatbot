@@ -1,5 +1,7 @@
 import 'package:fitnessbot/config/app_colors.dart';
 import 'package:fitnessbot/presentaion/mainscreen/contoller/statcontoller/statstics_contoller.dart';
+
+import 'package:fitnessbot/presentaion/screens/statistics/widets/health_rings.dart';
 import 'package:fitnessbot/presentaion/screens/statistics/widets/overiewContainer.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -160,7 +162,7 @@ class Statistics extends StatelessWidget {
                   style: AppTextStyles.body18,
                 ),
                 SizedBox(
-                  height: screenUtil.screenHeight * 0.135,
+                  height: screenUtil.screenHeight * 0.14,
                   child: Center(
                     child: ListView.builder(
                       shrinkWrap: true,
@@ -179,6 +181,158 @@ class Statistics extends StatelessWidget {
                       },
                     ),
                   ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              spacing: 40,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Daily Progress",
+                  style: AppTextStyles.body18,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    HealthRing(),
+                    Column(
+                      spacing: 15,
+                      children: [
+                        Row(
+                          spacing: 10,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Icon(
+                                  Icons.circle,
+                                  size: 15,
+                                  color: Color(0xFF7AD8F5),
+                                ),
+                              ],
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("Sleep"),
+                                RichText(
+                                  text: TextSpan(
+                                    children: [
+                                      TextSpan(
+                                        text: '6h 5min',
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 14,
+                                        ),
+                                      ),
+                                      TextSpan(
+                                        text: '/8h',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.normal,
+                                          color: Colors.grey,
+                                          fontSize: 14,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          ],
+                        ),
+                        Row(
+                          spacing: 10,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Icon(
+                                  Icons.circle,
+                                  size: 15,
+                                  color: Color(0xffFF9898),
+                                ),
+                              ],
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("Calories"),
+                                RichText(
+                                  text: TextSpan(
+                                    children: [
+                                      TextSpan(
+                                        text: '1050',
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 14,
+                                        ),
+                                      ),
+                                      TextSpan(
+                                        text: '/2000',
+                                        style: TextStyle(
+                                          color: Colors.grey,
+                                          fontSize: 14,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          ],
+                        ),
+                        Row(
+                          spacing: 10,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Icon(
+                                  Icons.circle,
+                                  size: 15,
+                                  color: Color(0xFFFFD188),
+                                ),
+                              ],
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("Steps"),
+                                RichText(
+                                  text: TextSpan(
+                                    children: [
+                                      TextSpan(
+                                        text: '2015',
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 14,
+                                        ),
+                                      ),
+                                      TextSpan(
+                                        text: '/6000',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.normal,
+                                          color: Colors.grey,
+                                          fontSize: 14,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          ],
+                        )
+                      ],
+                    )
+                  ],
                 )
               ],
             ),

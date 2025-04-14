@@ -1,4 +1,3 @@
-import 'package:fitnessbot/binding/home/home_binding.dart';
 import 'package:fitnessbot/binding/manscreen/mainscreenbinding.dart';
 import 'package:fitnessbot/config/app_routes.dart';
 import 'package:fitnessbot/pages.dart';
