@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 class ChatBotScreen extends StatelessWidget {
   ChatBotScreen({super.key});
 
-  final ChatbotContoller chatbotContoller = Get.put(ChatbotContoller());
+  final ChatbotController chatbotContoller = Get.put(ChatbotController());
   final ScrollController _scrollController = ScrollController();
 
   void _scrollToBottom() {

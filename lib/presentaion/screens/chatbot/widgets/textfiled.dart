@@ -11,7 +11,7 @@ class Textfiled extends StatefulWidget {
 }
 
 class _TextfiledState extends State<Textfiled> {
-  final ChatbotContoller chatbotContoller = Get.put(ChatbotContoller());
+  final ChatbotController chatbotContoller = Get.put(ChatbotController());
 
   final TextEditingController inputController = TextEditingController();
   final FocusNode _focusNode = FocusNode();

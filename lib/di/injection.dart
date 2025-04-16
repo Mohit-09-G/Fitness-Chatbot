@@ -11,5 +11,5 @@ Future<void> init() async {
   getIt.registerFactory<HomeContoller>(() => HomeContoller());
   getIt.registerFactory<MainScreenContoller>(() => MainScreenContoller());
   getIt.registerFactory<StatsticsContoller>(() => StatsticsContoller());
-  getIt.registerFactory<ChatbotContoller>(() => ChatbotContoller());
+  getIt.registerFactory<ChatbotController>(() => ChatbotController());
 }
