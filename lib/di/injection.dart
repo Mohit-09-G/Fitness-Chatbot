@@ -1,3 +1,4 @@
+import 'package:fitnessbot/presentaion/contoller/chatbot/chatbot_contoller.dart';
 import 'package:fitnessbot/presentaion/contoller/home/home_contoller.dart';
 import 'package:fitnessbot/presentaion/mainscreen/contoller/main_screen_contoller.dart';
 import 'package:fitnessbot/presentaion/mainscreen/contoller/statcontoller/statstics_contoller.dart';
@@ -10,4 +11,5 @@ Future<void> init() async {
   getIt.registerFactory<HomeContoller>(() => HomeContoller());
   getIt.registerFactory<MainScreenContoller>(() => MainScreenContoller());
   getIt.registerFactory<StatsticsContoller>(() => StatsticsContoller());
+  getIt.registerFactory<ChatbotContoller>(() => ChatbotContoller());
 }

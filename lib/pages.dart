@@ -1,7 +1,9 @@
+import 'package:fitnessbot/binding/chatbot/chatbot_binding.dart';
 import 'package:fitnessbot/binding/home/home_binding.dart';
 import 'package:fitnessbot/binding/manscreen/mainscreenbinding.dart';
 import 'package:fitnessbot/config/app_routes.dart';
 import 'package:fitnessbot/presentaion/mainscreen/screen/mainscreen.dart';
+import 'package:fitnessbot/presentaion/screens/chatbot/chat_bot_screen.dart';
 import 'package:fitnessbot/presentaion/screens/home/home_screen.dart';
 import 'package:get/route_manager.dart';
 
@@ -12,6 +14,10 @@ class Pages {
     GetPage(
         name: AppRoutes.mainScreen,
         page: () => Mainscreen(),
-        binding: Mainscreenbinding())
+        binding: Mainscreenbinding()),
+    GetPage(
+        name: AppRoutes.chatBotScreen,
+        page: () => ChatBotScreen(),
+        binding: ChatbotBinding())
   ];
 }

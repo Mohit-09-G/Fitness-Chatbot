@@ -10,4 +10,8 @@ class AppImages {
   static const String star = 'assets/images/Star.png';
   static const String clock = 'assets/images/Time Circle 6.png';
   static const String pin = 'assets/images/Pin.png';
+  static const String backbutton = 'assets/images/back_button.png';
+  static const String threeDots = "assets/images/threedots.png";
+  static const String cchatbot = "assets/images/chatbot.png";
+  static const String sed = 'assets/images/Send 2.png';
 }
