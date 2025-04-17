@@ -34,89 +34,93 @@ class ChatBotScreen extends StatelessWidget {
           child: Chatappbar(),
         ),
         backgroundColor: Colors.white,
-        body: Column(
-          children: [
-            Expanded(
-              child: Obx(() {
-                WidgetsBinding.instance
-                    .addPostFrameCallback((_) => _scrollToBottom());
-                return ListView.builder(
-                  controller: _scrollController,
-                  padding: const EdgeInsets.all(12),
-                  itemCount: chatbotContoller.messages.length,
-                  itemBuilder: (context, index) {
-                    final msg = chatbotContoller.messages[index];
-                    return Align(
-                      alignment: msg.isUser
-                          ? Alignment.centerRight
-                          : Alignment.centerLeft,
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: msg.isUser
-                            ? MainAxisAlignment.end
-                            : MainAxisAlignment.start,
-                        children: [
-                          if (!msg.isUser)
-                            Container(
-                              decoration: const BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Color(0xffF2F8FF)),
-                              padding: const EdgeInsets.all(5.0),
-                              child: Image.asset(
-                                AppImages.cchatbot,
-                                height: 20,
-                                width: 20,
-                              ),
-                            ),
-                          const SizedBox(width: 8),
-                          Flexible(
-                            child: Container(
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 15, horizontal: 20),
-                              margin: const EdgeInsets.symmetric(vertical: 4),
-                              decoration: BoxDecoration(
-                                shape: BoxShape.rectangle,
-                                color: msg.isUser
-                                    ? const Color(0xffF2F8FF)
-                                    : const Color(0xffF2F4F5),
-                                borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(msg.isUser ? 20 : 0),
-                                  topRight:
-                                      Radius.circular(msg.isUser ? 20 : 20),
-                                  bottomLeft: Radius.circular(20),
-                                  bottomRight:
-                                      Radius.circular(msg.isUser ? 0 : 20),
+        body: Padding(
+          padding: const EdgeInsets.all(18.0),
+          child: Column(
+            children: [
+              Expanded(
+                child: Obx(() {
+                  WidgetsBinding.instance
+                      .addPostFrameCallback((_) => _scrollToBottom());
+                  return ListView.builder(
+                    controller: _scrollController,
+                    padding: const EdgeInsets.all(12),
+                    itemCount: chatbotContoller.messages.length,
+                    itemBuilder: (context, index) {
+                      final msg = chatbotContoller.messages[index];
+                      return Align(
+                        alignment: msg.isUser
+                            ? Alignment.centerRight
+                            : Alignment.centerLeft,
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: msg.isUser
+                              ? MainAxisAlignment.end
+                              : MainAxisAlignment.start,
+                          children: [
+                            if (!msg.isUser)
+                              Container(
+                                decoration: const BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Color(0xffF2F8FF)),
+                                padding: const EdgeInsets.all(5.0),
+                                child: Image.asset(
+                                  AppImages.cchatbot,
+                                  height: 20,
+                                  width: 20,
                                 ),
                               ),
-                              child: Text(
-                                msg.text,
-                                style: TextStyle(
-                                  fontSize: 16,
+                            const SizedBox(width: 8),
+                            Flexible(
+                              child: Container(
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 15, horizontal: 20),
+                                margin: const EdgeInsets.symmetric(vertical: 4),
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.rectangle,
                                   color: msg.isUser
-                                      ? const Color(0xff006BE5)
-                                      : const Color(0xff303437),
+                                      ? const Color(0xffF2F8FF)
+                                      : const Color(0xffF2F4F5),
+                                  borderRadius: BorderRadius.only(
+                                    topLeft:
+                                        Radius.circular(msg.isUser ? 20 : 0),
+                                    topRight:
+                                        Radius.circular(msg.isUser ? 20 : 20),
+                                    bottomLeft: Radius.circular(20),
+                                    bottomRight:
+                                        Radius.circular(msg.isUser ? 0 : 20),
+                                  ),
+                                ),
+                                child: Text(
+                                  msg.text,
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    color: msg.isUser
+                                        ? const Color(0xff006BE5)
+                                        : const Color(0xff303437),
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                        ],
-                      ),
-                    );
-                  },
-                );
-              }),
-            ),
-            if (chatbotContoller.isLoading.value)
-              const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: CircularProgressIndicator(),
+                          ],
+                        ),
+                      );
+                    },
+                  );
+                }),
               ),
-            const Padding(
-              padding: EdgeInsets.all(10.0),
-              child: Textfiled(),
-            ),
-          ],
+              if (chatbotContoller.isLoading.value)
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: CircularProgressIndicator(),
+                ),
+              const Padding(
+                padding: EdgeInsets.all(10.0),
+                child: Textfiled(),
+              ),
+            ],
+          ),
         ),
       ),
     );

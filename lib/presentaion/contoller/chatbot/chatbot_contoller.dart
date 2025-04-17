@@ -25,6 +25,7 @@ class ChatbotController extends GetxController {
   }
 
   Future<void> sendMessage(String message) async {
+    // Prevent duplicate user messages
     bool messageExists =
         messages.any((msg) => msg.isUser && msg.text == message);
 
@@ -38,7 +39,7 @@ class ChatbotController extends GetxController {
     responseText.value = '';
 
     try {
-      final reply = await _chatbotService.getBotResponse(message);
+      final reply = await _chatbotService.getBotResponse(messages.toList());
       responseText.value = reply;
       messages.add(ChatMessage(text: reply, isUser: false));
     } catch (e) {
