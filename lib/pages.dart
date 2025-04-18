@@ -5,6 +5,7 @@ import 'package:fitnessbot/config/app_routes.dart';
 import 'package:fitnessbot/presentaion/mainscreen/screen/mainscreen.dart';
 import 'package:fitnessbot/presentaion/screens/chatbot/chat_bot_screen.dart';
 import 'package:fitnessbot/presentaion/screens/home/home_screen.dart';
+import 'package:fitnessbot/presentaion/screens/profile/create_profile/create_user_profile.dart';
 import 'package:get/route_manager.dart';
 
 class Pages {
@@ -18,6 +19,7 @@ class Pages {
     GetPage(
         name: AppRoutes.chatBotScreen,
         page: () => ChatBotScreen(),
-        binding: ChatbotBinding())
+        binding: ChatbotBinding()),
+    GetPage(name: AppRoutes.createProfile, page: () => CreateUserProfile())
   ];
 }
